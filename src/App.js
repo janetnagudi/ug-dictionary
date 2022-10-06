@@ -1,7 +1,7 @@
 import "./app.css";
 import { Words } from "./words";
 import React, { useEffect, useState } from "react";
-import Table from "./Table";
+import TableU from "./Table";
 
 function App() {
   const [query, setQuery]
@@ -16,7 +16,7 @@ const search = (data) => {
     <div className="app">
 <input type="text" placeholder="Search..." className="search" onChange={e=> setQuery(e.target.value)}
 />
-<Table data={search(Words)} />
+<TableU data={search(Words)} />
 
 
     </div>
