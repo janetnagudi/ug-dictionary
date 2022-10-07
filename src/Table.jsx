@@ -7,17 +7,23 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Words } from "./words";
+import "./app.css";
+
+
+
 
 
 const TableU = ({data}) => {
+
+
   return (
-    <TableContainer component={Paper}>
+    <TableContainer className="my-app" component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Luganda</TableCell>
-            <TableCell align="right">English</TableCell>
-            <TableCell align="right">Info</TableCell>
+            <TableCell align="left">English</TableCell>
+            <TableCell align="left">Info</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -36,6 +42,7 @@ const TableU = ({data}) => {
         </TableBody>
       </Table>
     </TableContainer>
+
       )
     }
     
