@@ -7,15 +7,19 @@
   flex-direction: column;
   align-items: center;
   width: 900px;
-}
-div{
-  font-family: "Quicksand";
+  background-color:#607d8b;
+
+  ;
 }
 
-.search {
+.the-app{
+  background-color:#607d8b;
+}
+
+/*.search {
   padding: 10px;
   font-size: 20px;
-}
+}*/
 
 .list {
   padding: 0;

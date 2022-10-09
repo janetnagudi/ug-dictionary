@@ -17,8 +17,11 @@ const TableU = ({data}) => {
 
 
   return (
-    <TableContainer className="my-app" component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+    <TableContainer component={Paper} sx={{        bgcolor: "#607d8b",
+  }} className="my-app" >
+      <Table  className="my-app" sx={{ 
+        minWidth: 650,
+        }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Luganda</TableCell>

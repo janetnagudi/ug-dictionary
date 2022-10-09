@@ -7,6 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import IconButton from '@mui/material/IconButton';
+import TextField from '@mui/material/TextField';
 
 
 
@@ -14,6 +15,7 @@ import IconButton from '@mui/material/IconButton';
 function App() {
   const font =  "'Quicksand', sans-serif";
   const theme = createTheme({
+
     typography: {
       fontFamily: font,
       },
@@ -29,12 +31,12 @@ const search = (data) => {
 };
 
    return (
-    <div className="my-app">
-      <ThemeProvider theme={theme}>
+    <div className="the-app" >
+      <ThemeProvider theme={theme} >
+      <CssBaseline />
         
-        <input type="text" placeholder="Search..." className="my-app" onChange={e=> setQuery(e.target.value)}
-/>
-<TableU data={search(Words)} />
+<TextField  id="outlined-basic" placeholder="Search..." label="Outlined" variant="outlined" onChange={e=> setQuery(e.target.value)} />
+<TableU className="my-app" data={search(Words)} />
 </ThemeProvider>
 
     </div>
