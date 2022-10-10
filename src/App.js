@@ -32,13 +32,17 @@ const search = (data) => {
 
 };
 
+
+
    return (
     <div >
       <ThemeProvider theme={theme} >
       <CssBaseline />
 <Header/>      
         
-<TextField  id="outlined-basic" placeholder="Search..." label="Outlined" variant="outlined" onChange={e=> setQuery(e.target.value)} />
+{/*comment here*/}
+{/*<TextField  id="outlined-basic" placeholder="Search..." label="Outlined" variant="outlined" onChange={e=> setQuery(e.target.value)} />*/}
+
 
 <TableU data={search(Words)}  />
 </ThemeProvider>

@@ -17,7 +17,7 @@ const TableU = ({data}) => {
 
 
   return (
-    <TableContainer component={Paper} sx={{ width:1200, margin: "auto"  }} >
+    <TableContainer component={Paper} sx={{ width:1200, my: 10, mr:"auto", ml:"auto" }} >
       <Table size="large" sx={{ 
         }} aria-label="simple table">
         <TableHead>
