@@ -1,0 +1,16 @@
+GET http://localhost:3000/words
+
+###
+
+GET http://localhost:3000/words/15
+
+###
+
+POST http://localhost:3000/words
+Content-Type: application/json
+
+{
+  "luganda": "Kale",
+  "english": "Okay"
+}
+
