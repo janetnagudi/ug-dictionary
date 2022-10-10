@@ -29,10 +29,10 @@ function App() {
 
 const search = (data) => {
   return data.filter((item) =>
-  item.luganda.toLowerCase().includes(query) ||
   item.luganda.toUpperCase().includes(query) ||
+  item.luganda.toLowerCase().includes(query) ||
   item.english.toUpperCase().includes(query) ||
-  item.english.toUpperCase().includes(query) ) ;
+  item.english.toLowerCase().includes(query) ) ;
 
 };
 
@@ -42,7 +42,7 @@ const search = (data) => {
       <CssBaseline />
 <Header/>      
         
-<TextField  id="outlined-basic" placeholder="Search..." label="Outlined" variant="outlined" onChange={e=> setQuery(e.target.value)} />
+<TextField  id="outlined-basic" placeholder="Search..." label="working search bar" variant="outlined" onChange={e=> setQuery(e.target.value)} />
 
 <TableU data={search(Words)}  />
 </ThemeProvider>
