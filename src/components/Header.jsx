@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from "react";
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -18,6 +18,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
+import BookmarksIcon from '@mui/icons-material/Bookmarks';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -61,6 +62,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Header() {
+  //search stuff
+  const [query, setQuery]
+  = useState("");
+ 
+ const search = (data) => {
+   return data.filter((item) => item.luganda.toLowerCase().includes(query) ||
+   item.english.toLowerCase().includes(query));
+ 
+ };
+ //search stuff
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -138,7 +149,7 @@ export default function Header() {
           color="inherit"
         >
           <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
+            <BookmarksIcon />
           </Badge>
         </IconButton>
         <p>Notifications</p>
@@ -186,7 +197,14 @@ export default function Header() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
+              onChange={e=> setQuery(e.target.value)} 
             />
+{/*<TextField  id="outlined-basic" placeholder="Search..." label="Outlined" variant="outlined" onChange={e=> setQuery(e.target.value)} />*/}
+
+
+
+
+
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
@@ -201,7 +219,7 @@ export default function Header() {
               color="inherit"
             >
               <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
+                <BookmarksIcon />
               </Badge>
             </IconButton>
             <IconButton
