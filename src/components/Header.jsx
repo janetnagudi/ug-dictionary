@@ -21,6 +21,7 @@ import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import BookmarksIcon from '@mui/icons-material/Bookmarks';
 
 
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -61,8 +62,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Header() {
-  //search stuff
+
+const Header = () => {
+
+  /*search stuff
   const [query, setQuery]
   = useState("");
  
@@ -71,7 +74,9 @@ export default function Header() {
    item.english.toLowerCase().includes(query));
  
  };
- //search stuff
+ */
+
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -197,7 +202,7 @@ export default function Header() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
-              onChange={e=> setQuery(e.target.value)} 
+              /*onChange={e=> setQuery(e.target.value)} */
             />
 {/*<TextField  id="outlined-basic" placeholder="Search..." label="Outlined" variant="outlined" onChange={e=> setQuery(e.target.value)} />*/}
 
@@ -253,3 +258,5 @@ export default function Header() {
     </Box>
   );
 }
+
+export default Header
