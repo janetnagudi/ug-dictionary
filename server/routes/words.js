@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const Word = require('../models/blob')
+const Word = require('../models/word')
+const mongoose = require('mongoose')
+
 
 //REST API
 //Get words ALL
@@ -13,16 +15,16 @@ try {
   res.status(500).json({ message: err.message })
 }
 })
-//Get words ONE by ID -colon means parameter -  req.params.id
-
-router.get('/:id', (req, res) => {
-  res.send(req.params.id)
+/*
+Getting words ONE by ID GET-colon means parameter -  req.params.id
+*/
+router.get('/:id', getWord,(req, res) => {
+  res.send(req.word.luganda)
 })
-
-
-//Post(create on entire resource) ONE
-//201 created something succesful- an object specific
-//400 status- client-user input is wrong not the server like 500
+/*Post(create on entire resource) ONE
+201 created something succesful- an object specific
+400 status- client-user input is wrong not the server like 500
+*/
 router.post('/', async (req, res) => {
 const word = new Word({
   luganda: req.body.luganda,
@@ -36,16 +38,34 @@ try {
 }
 
 })
-
-
-//PUT(update) ONE- patch vs put- patch for only word piece of info?
+/*PUT(update) ONE- patch vs put- patch for only word piece of info?
+*/
 router.patch('/:id', (req, res) => {
-  
+
 })
-//Delete
+
+/*Delete*/
 router.get('/:id', (req, res) => {
   
 })
 
+async function getWord(req, res, next) {
+  let word
+  try {
+    word = await Word.findById(req.params.id)
+    if(word == null) {
+      return res.status(404).json({ message: 'Cannot find word' })
+    }
+  
+  } catch (err) {
+    return res.status(500).json({ message: err.message })
+  }
+
+  res.word = word
+  next()
+}
+
+
+
 module.exports = router
-//rest and rest endpints
+//rest and rest endpoints

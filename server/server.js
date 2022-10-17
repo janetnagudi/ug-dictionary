@@ -14,6 +14,7 @@ app.use(express.json())
 
 const wordsRouter = require('./routes/words')
 app.use('/words', wordsRouter)
+
 //'localhost:3000/words'
 
 //need spend more time server side

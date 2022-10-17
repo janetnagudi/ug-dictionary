@@ -2,7 +2,7 @@ GET http://localhost:3000/words
 
 ###
 
-GET http://localhost:3000/words/15
+GET http://localhost:3000/words/634448c1dab1fe117ca64313
 
 ###
 

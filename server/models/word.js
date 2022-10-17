@@ -11,7 +11,7 @@ const wordSchema = new mongoose.Schema({
   },
   info: {
     type: String,
-    required: true
+    required: false
   }
 })
 
